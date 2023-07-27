@@ -1,0 +1,17 @@
+@import "./Logo.css";
+@import "./Title.css";
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 42px 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 24px 0;
+    }
+}

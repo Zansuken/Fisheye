@@ -1,0 +1,11 @@
+@import "./Banner/index.css";
+@import "./Content/index.css";
+@import "./ContactDialog/index.css";
+
+.photographer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 100px;
+}

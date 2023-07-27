@@ -1,0 +1,22 @@
+@import "PhotographerCard/index.css";
+
+.home {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
