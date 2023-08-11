@@ -10,6 +10,9 @@
 
 .banner__description {
     padding-left: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .banner__description .photographer-card__name {
@@ -36,6 +39,94 @@
     text-align: left;    
 }
 
+.banner__right-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
 .banner .photographer-card__picture-container {
-    padding-right: 50px;
+    margin-right: 50px;
+}
+
+@media screen and (max-width: 1080px) {
+    .banner__description .photographer-card__name {
+        font-size: 48px;
+        line-height: 62px;
+    }
+
+    .banner__description .photographer-card__location {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .banner__description .photographer-card__tagline {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .banner .photographer-card__picture-container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .banner .photographer-card__picture-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .banner__right-section {
+        gap: 16px;
+    }
+
+    .banner button {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .banner__description {
+        padding: 0;
+        margin-top: 50px;
+        gap: 8px;
+    }
+
+    .banner__description .photographer-card__name {
+        font-size: 48px;
+        line-height: 62px;
+        text-align: center;
+    }
+
+    .banner__description .photographer-card__location {
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+    }
+
+    .banner__description .photographer-card__tagline {
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .banner .photographer-card__picture-container {
+        padding: 0;
+    }
+
+    .banner__right-section {
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 32px 0;
+    }
 }

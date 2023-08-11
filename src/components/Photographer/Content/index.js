@@ -1,8 +1,26 @@
 import build from "../../../componentBuilder";
+import MediaCard from "./MediaCard";
 
-const Content = ({ media }) => {
-  console.log(media);
-  return build("div", { class: "content" }, "Content");
+const Content = ({ images, videos }) => {
+  const mediaComponents = [];
+
+  videos.forEach((video) => {
+    mediaComponents.push(
+      build("div", { class: "content__media__container" }, [
+        MediaCard({ video }),
+      ])
+    );
+  });
+
+  images.forEach((image) => {
+    mediaComponents.push(
+      build("div", { class: "content__media__container" }, [
+        MediaCard({ image }),
+      ])
+    );
+  });
+
+  return build("div", { class: "content" }, mediaComponents);
 };
 
 export default Content;

@@ -1,0 +1,106 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 35px 0 35px;
+}
+
+/* no top padding on first .field */
+.field:first-child {
+    padding-top: 0;
+}
+
+.field .label {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;    
+}
+
+.field .input,
+.field .input-textarea {
+    width: fit-content;
+    height: 52px;
+    padding: 0 0 0 21px;
+    margin: 0;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.field .input.fullWidth,
+.field .input-textarea.fullWidth {
+    width: calc(100% - 21px);
+}
+
+.field .input-textarea {
+    flex: 1;
+    padding-top: 16px;
+    resize: none;
+}
+
+.field .input:focus,
+.field .input-textarea:focus {
+    outline: none;
+    border: 2px solid var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {
+
+    .field .label {
+        font-size: 32px;
+        line-height: 41px;
+    }
+
+    .field .input,
+    .field .input-textarea {
+        height: 42px;
+        font-size: 32px;
+        line-height: 41px;
+    }
+
+    .field .input-textarea {
+        padding-top: 12px;
+    }
+
+    .contact-dialog__actions {
+        margin-top: 0;
+    }
+
+    #app > div > div.photographer > div.banner > div.banner__right-section > dialog > div > form > div.contact-dialog__actions > button {
+        width: 100%;
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .field .label {
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .field .input,
+    .field .input-textarea {
+        height: 32px;
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .field .input-textarea {
+        padding-top: 8px;
+    }
+
+    .contact-dialog__actions {
+        margin-top: 22px;
+    }
+}
+
+.label.error {
+    color: var(--color-error);
+}

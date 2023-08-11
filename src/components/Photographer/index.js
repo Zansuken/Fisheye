@@ -1,4 +1,10 @@
-import { getPhotographer, getPhotographersPhotos } from "../../api/requests";
+import {
+  getPhotographer,
+  getPhotographersAvatar,
+  getPhotographersImages,
+  getPhotographersVideos,
+  getVideoDetails,
+} from "../../api/requests";
 import build from "../../componentBuilder";
 import {
   currentRoute,
@@ -12,15 +18,35 @@ const currentId = getPhotographerId(currentRoute());
 const photographer =
   isPhotoGrapherRoute(currentRoute()) && (await getPhotographer(currentId));
 
-const media =
+const images =
   isPhotoGrapherRoute(currentRoute()) &&
-  (await getPhotographersPhotos(currentId));
+  (await getPhotographersImages(currentId));
+
+const videoUrl =
+  isPhotoGrapherRoute(currentRoute()) &&
+  (await getPhotographersVideos(currentId));
+
+let videoDetailsId = "";
+
+if (images) {
+  videoDetailsId = images.find((media) => media.video ?? media.id);
+}
+
+const videoDetails =
+  isPhotoGrapherRoute(currentRoute()) &&
+  (await getVideoDetails(videoDetailsId.id));
+
+const avatar =
+  isPhotoGrapherRoute(currentRoute()) &&
+  (await getPhotographersAvatar(currentId));
 
 const Photographer = () => {
-  console.log(photographer);
   return build("div", { class: "photographer" }, [
-    Banner({ photographer }),
-    Content({ media }),
+    Banner({ photographer, avatar }),
+    Content({
+      images: images.filter((media) => !media.video),
+      videos: [{ url: videoUrl, ...videoDetails[0] }],
+    }),
   ]);
 };
 

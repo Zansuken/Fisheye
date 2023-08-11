@@ -19,3 +19,7 @@
     color: var(--color-black);
     cursor: pointer;
 }
+
+.button.fullWidth {
+    width: 100%;
+}

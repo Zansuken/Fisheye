@@ -8,3 +8,8 @@
 .app > *:not(.header) {
     flex: 1;
 }
+
+img[data-loading="true"], video[data-loading="true"] {
+    background: url('/images/loadingSpinner.svg') no-repeat center;
+    background-size: 50px;
+}

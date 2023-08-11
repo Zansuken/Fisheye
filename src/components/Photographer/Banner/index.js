@@ -6,24 +6,28 @@ import ProfilePicture from "../../shared/ProfilePicture";
 import TagLine from "../../shared/TagLine";
 import ContactDialog, { openDialog } from "../ContactDialog";
 
-const Banner = ({ photographer: { name, city, country, tagline } }) => {
+const Banner = ({
+  photographer: { id, name, city, country, tagline },
+  avatar,
+}) => {
   const description = build("div", { class: "banner__description" }, [
     PhotographerName({ name, heading: "h1" }),
     Location({ city, country }),
     TagLine({ tagline }),
   ]);
 
-  return build("div", { class: "banner" }, [
-    description,
+  const rightSection = build("div", { class: "banner__right-section" }, [
     Button({
       content: "Contactez-moi",
       onClick: openDialog,
     }),
     ProfilePicture({
-      src: "https://fastly.picsum.photos/id/227/200/200.jpg?hmac=_HAD3ZQuIUMd1tjQfU5i21RCLHRDH_r_Xuq0q6iRN-o",
+      src: avatar,
     }),
-    ContactDialog({ name }),
+    ContactDialog({ id, name }),
   ]);
+
+  return build("div", { class: "banner" }, [description, rightSection]);
 };
 
 export default Banner;

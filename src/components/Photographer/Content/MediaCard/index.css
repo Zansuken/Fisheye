@@ -1,0 +1,14 @@
+@import "./MediaDescription/index.css";
+
+.content__media__container {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 30px;
+}
+
+.content__media__img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}

@@ -31,6 +31,17 @@ const recursiveAppend = (element, children) => {
 const build = (elementType, attributes, ...children) => {
   const element = document.createElement(elementType);
 
+  // Add a loading state for img and video elements
+  if (elementType === "img" || elementType === "video") {
+    element.onload = () => {
+      // Set the loading state to false when the media is loaded
+      element.setAttribute("data-loading", "false");
+    };
+
+    // Set the initial loading state to true
+    element.setAttribute("data-loading", "true");
+  }
+
   if (attributes) {
     Object.entries(attributes).forEach(([key, value]) => {
       if (key === "onClick") {

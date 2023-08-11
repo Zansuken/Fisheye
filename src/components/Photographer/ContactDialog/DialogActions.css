@@ -1,0 +1,6 @@
+.contact-dialog__actions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 26px 35px 35px 35px;
+}

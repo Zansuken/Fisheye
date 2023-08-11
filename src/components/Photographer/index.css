@@ -9,3 +9,9 @@
     justify-content: flex-start;
     padding: 0 100px;
 }
+
+@media screen and (max-width: 768px) {
+    .photographer {
+        padding: 0 16px;
+    }
+}

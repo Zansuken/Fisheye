@@ -5,7 +5,15 @@ import PhotographerName from "../../shared/Name";
 import ProfilePicture from "../../shared/ProfilePicture";
 import TagLine from "../../shared/TagLine";
 
-const PhotographerCard = ({ id, name, city, country, tagline, price }) => {
+const PhotographerCard = ({
+  id,
+  name,
+  city,
+  country,
+  tagline,
+  price,
+  avatarUrl,
+}) => {
   const link = () =>
     build(
       "a",
@@ -19,7 +27,7 @@ const PhotographerCard = ({ id, name, city, country, tagline, price }) => {
       },
       [
         ProfilePicture({
-          src: "https://fastly.picsum.photos/id/227/200/200.jpg?hmac=_HAD3ZQuIUMd1tjQfU5i21RCLHRDH_r_Xuq0q6iRN-o",
+          src: avatarUrl,
         }),
         PhotographerName({ name }),
       ]

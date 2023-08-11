@@ -1,11 +1,17 @@
 import { getPhotographers } from "../../api/requests";
 import build from "../../componentBuilder";
+import routes from "../../constants/routes";
+import { currentRoute } from "../../router";
 import PhotographerCard from "./PhotographerCard";
 
-const photographers = await getPhotographers();
+let photographers = [];
+
+if (currentRoute() === routes.HOME) {
+  photographers = await getPhotographers();
+}
 
 const Home = () => {
-  const cards = photographers.map((photographer) =>
+  const cards = photographers?.map((photographer) =>
     PhotographerCard(photographer)
   );
 

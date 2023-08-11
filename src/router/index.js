@@ -53,7 +53,7 @@ export const handleRoute = (route) => {
       // Handle the photographer route
       break;
     default:
-      // Handle the 404 route
+      navigateTo(HOME);
       break;
   }
 };
