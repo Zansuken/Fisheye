@@ -1,9 +1,9 @@
 import build from "../../../../componentBuilder";
 import MediaDescription from "./MediaDescription";
 
-const MediaCard = ({ image, video }) => {
-  if (image) {
-    const { image: src, title, likes } = image;
+const MediaCard = ({ media, media: { type } }) => {
+  if (type === "image") {
+    const { image: src, title, likes } = media;
 
     return build("div", { class: "content__media" }, [
       build("img", { class: "content__media__img", src, alt: title }),
@@ -11,8 +11,8 @@ const MediaCard = ({ image, video }) => {
     ]);
   }
 
-  if (video) {
-    const { title, likes, url } = video;
+  if (type === "video") {
+    const { title, likes, url } = media;
 
     return build("div", { class: "content__media" }, [
       build(

@@ -59,23 +59,6 @@ export const getPhotographersVideos = async (id) => {
   }
 };
 
-export const getVideoDetails = async (id) => {
-  try {
-    const formattedEndpoint = endpoints.VIDEO_DETAILS.replace("videoId", id);
-    const response = await fetch(formattedEndpoint);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch video details");
-    }
-
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 export const getPhotographersAvatar = async (id) => {
   try {
     const formattedEndpoint = endpoints.PHOTOGRAPHER_AVATAR.replace(

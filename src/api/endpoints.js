@@ -6,6 +6,5 @@ export const endpoints = {
   PHOTOGRAPHERS_IMAGES: `${BASE_URL}/photographers/photographerId/images`,
   PHOTOGRAPHERS_VIDEOS: `${BASE_URL}/photographers/photographerId/videos`,
   PHOTOGRAPHER_AVATAR: `${BASE_URL}/photographers/photographerId/avatar`,
-  VIDEO_DETAILS: `${BASE_URL}/videos/videoId`,
   CONTACT: `${BASE_URL}/contact/photographerId`,
 };

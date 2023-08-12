@@ -1,5 +1,6 @@
 @import "./Banner/index.css";
 @import "./Content/index.css";
+@import "./MediaSorter/index.css";
 @import "./ContactDialog/index.css";
 
 .photographer {

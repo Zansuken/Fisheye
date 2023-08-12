@@ -1,9 +1,19 @@
 @import "./MediaDescription/index.css";
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .content__media__container {
     width: 350px;
     height: 350px;
     margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .content__media__img {
