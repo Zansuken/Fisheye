@@ -26,6 +26,8 @@ export const observer = new MutationObserver(() => {
     ".media-sorter__container__select__options__container"
   );
 
+  if (!media) return;
+
   // Variables
   const formattedMedia = media.map((media) => {
     const updatedMedia = media;

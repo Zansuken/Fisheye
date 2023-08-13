@@ -1,0 +1,209 @@
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.635);
+}
+
+.carousel__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__container__media {
+    padding-top: 64px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1050px;
+    height: 800px;
+    overflow: hidden;
+    /* border-radius: 5px; */
+}
+
+.carousel__container__media-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__container__media img,
+.carousel__container__media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.carousel__container__media img[data-focused="true"],
+.carousel__container__media video[data-focused="true"]{
+    animation: fadeIn 0.3s ease-in-out;
+    opacity: 1;
+    z-index: 999;
+}
+
+.carousel__container__buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel__container__button {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    height: 500px;
+    margin-top: 32px;
+    padding: 24px;
+    border-radius: 5px;
+}
+
+.carousel__container__button:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    background-color: rgba(0, 0, 0, 0.335);
+}
+
+.carousel__container__button img {
+    height: 48px;
+}
+
+.carousel__container__button.previous img {
+    transform: rotate(-90deg);
+}
+
+.carousel__container__button.next img {
+    transform: rotate(90deg);
+}
+
+.carousel__container__close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    margin: 24px;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    padding: 24px;
+    border-radius: 5px;
+}
+
+.carousel__container__close:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    background-color: rgba(0, 0, 0, 0.335);
+}
+
+.carousel__container__close:hover img {
+    filter: brightness(10);
+}
+
+.carousel__container__button:hover img {
+    filter: brightness(10);
+}
+
+.carousel__container__media__description {
+    max-width: 1050px;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--color-primary);
+    background-color: #ffffff;
+    margin-bottom: 24px;
+    border-radius: 0 0 5px 5px;
+}
+
+.carousel__container__media__description__title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 32px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.carousel__container__media__description__likes {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-right: 32px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+}
+
+.carousel__container__media__description__likes:focus {
+    outline: none;
+    filter: brightness(1.6);
+}
+
+.carousel__container__media__description__likes:hover {
+    filter: brightness(1.6);
+}
+
+.carousel__container__media__description__likes:hover img {
+    animation: pulse 0.7s ease-in-out;
+}

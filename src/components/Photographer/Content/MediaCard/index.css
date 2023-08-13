@@ -12,13 +12,38 @@
 .content__media__container {
     width: 350px;
     height: 350px;
-    margin-bottom: 30px;
     animation: fadeIn 1.2s ease-in-out;
+    cursor: pointer;
 }
 
-.content__media__img {
+.content__media__thumbnail-container {
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.content__media__container:hover .content__media__thumbnail {
+    transform: scale(1.2);
+}
+
+.content__media:focus {
+    outline: none;
+}
+
+.content__media:focus .content__media__thumbnail {
+    transform: scale(1.2);
+}
+
+.content__media:focus .content__media__thumbnail-container {
+    border: 2px solid var(--color-primary);
+}
+
+.content__media__thumbnail {
+    transition: transform 0.3s ease-in-out;
     width: 100%;
     height: 300px;
     object-fit: cover;
+    object-position: center;
     border-radius: 5px;
 }
