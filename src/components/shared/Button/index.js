@@ -1,9 +1,13 @@
 import build from "../../../componentBuilder";
 
-const Button = ({ content, onClick, fullWidth = false }) => {
+const Button = ({ content, onClick, fullWidth = false, ...restAttributes }) => {
   return build(
     "button",
-    { class: `button${fullWidth ? " fullWidth" : ""}`, onClick },
+    {
+      class: `button${fullWidth ? " fullWidth" : ""}`,
+      onClick,
+      ...restAttributes,
+    },
     content
   );
 };

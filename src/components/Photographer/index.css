@@ -1,6 +1,8 @@
 @import "./Banner/index.css";
 @import "./Content/index.css";
 @import "./MediaSorter/index.css";
+@import "./MediaSorter/MediaSorterOptions/index.css";
+@import "./MediaSorter/MediaSorterLabel.css";
 @import "./ContactDialog/index.css";
 
 .photographer {

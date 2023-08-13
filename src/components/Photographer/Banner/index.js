@@ -20,9 +20,11 @@ const Banner = ({
     Button({
       content: "Contactez-moi",
       onClick: openDialog,
+      title: "Contact me",
     }),
     ProfilePicture({
       src: avatar,
+      alt: name,
     }),
     ContactDialog({ id, name }),
   ]);
