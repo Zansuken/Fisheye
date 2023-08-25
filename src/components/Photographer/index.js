@@ -12,6 +12,7 @@ import {
 } from "../../router";
 import Banner from "./Banner";
 import MediaSorter from "./MediaSorter";
+import PriceAndLikes from "./PriceAndLikes";
 
 const currentId = getPhotographerId(currentRoute());
 const photographer =
@@ -33,6 +34,7 @@ const Photographer = () => {
   return build("div", { class: "photographer", id: "photographerContent" }, [
     Banner({ photographer, avatar }),
     MediaSorter(),
+    PriceAndLikes(),
   ]);
 };
 

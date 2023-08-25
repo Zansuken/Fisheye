@@ -1,0 +1,25 @@
+.price-and-likes__container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-hover);
+    padding: 21px 37px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: right;
+    display: flex;
+    gap: 64px;
+    border-radius: 5px 5px 0 0;
+}
+
+.price-and-likes__container__likes {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.price-and-likes__container__likes__icon {
+    filter: grayscale(100%);
+}

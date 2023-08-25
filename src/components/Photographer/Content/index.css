@@ -9,4 +9,5 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 60px 95px;
+    padding-bottom: 60px;
 }

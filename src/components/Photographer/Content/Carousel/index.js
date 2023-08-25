@@ -1,14 +1,17 @@
 // import { renderCarousel } from "..";
 import build from "../../../../componentBuilder";
 
+let focusedMediaId = null;
+
 const Carousel = ({ media, focusedMedia }) => {
+  focusedMediaId = focusedMedia?.id;
+
   const closeCarousel = () => {
     document.querySelector(".carousel").remove();
     document.querySelector("#app").classList.remove("dialog-open");
   };
 
   const updateFocusedMedia = (direction) => {
-    console.log(direction);
     const items = document.querySelectorAll(
       ".carousel__container__media__element"
     );
@@ -22,19 +25,42 @@ const Carousel = ({ media, focusedMedia }) => {
 
     items[focusedMediaIndex].setAttribute("data-focused", "false");
 
+    const getItemId = (item) => item.getAttribute("data-id");
+
+    const updateContent = (index) => {
+      const element = items[index];
+      const mediaId = Number(getItemId(element));
+      const focusMediaData = media.find(({ id }) => id === mediaId);
+
+      focusedMediaId = mediaId;
+
+      console.log(focusedMediaId);
+      element.setAttribute("data-focused", "true");
+      document.querySelector(
+        ".carousel__container__media__description__title"
+      ).innerText = focusMediaData.title;
+      document.querySelector(
+        ".content__media__description__likes__counter"
+      ).innerText = focusMediaData.likes;
+    };
+
     if (direction === "next") {
       if (focusedMediaIndex === items.length - 1) {
-        items[0].setAttribute("data-focused", "true");
+        updateContent(0);
       } else {
-        items[focusedMediaIndex + 1].setAttribute("data-focused", "true");
+        updateContent(focusedMediaIndex + 1);
       }
     } else {
       if (focusedMediaIndex === 0) {
-        items[items.length - 1].setAttribute("data-focused", "true");
+        updateContent(items.length - 1);
       } else {
-        items[focusedMediaIndex - 1].setAttribute("data-focused", "true");
+        updateContent(focusedMediaIndex - 1);
       }
     }
+  };
+
+  const onLike = () => {
+    console.log("TODO: TO BE IMPLEMENTED", focusedMediaId);
   };
 
   const mediaElements = media.map((media) => {
@@ -106,10 +132,14 @@ const Carousel = ({ media, focusedMedia }) => {
           "button",
           {
             class: "carousel__container__media__description__likes",
-            onClick: () => console.log("TODO: TO BE IMPLEMENTED"),
+            onClick: onLike,
           },
           [
-            build("span", {}, [JSON.stringify(focusedMedia?.likes)]),
+            build(
+              "span",
+              { class: "content__media__description__likes__counter" },
+              [JSON.stringify(focusedMedia?.likes)]
+            ),
             build("img", {
               class: "content__media__description__likes__icon",
               src: "/images/heart.svg",

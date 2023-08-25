@@ -4,6 +4,7 @@
 @import "./MediaSorter/MediaSorterOptions/index.css";
 @import "./MediaSorter/MediaSorterLabel.css";
 @import "./ContactDialog/index.css";
+@import "./PriceAndLikes/index.css";
 
 .photographer {
     display: flex;

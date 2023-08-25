@@ -15,16 +15,25 @@ export const closeDialog = () => {
   dialog.close();
 };
 
-// TODO: Reset form on submit
+const resetFormInputs = (inputs) =>
+  inputs.forEach((input) => (input.value = ""));
 
 const onSubmit = (id) => {
-  const { value: firstName } = document.querySelector("#firstName");
+  const firstNameInput = document.querySelector("#firstName");
 
-  const { value: lastName } = document.querySelector("#lastName");
+  const lastNameInput = document.querySelector("#lastName");
 
-  const { value: email } = document.querySelector("#email");
+  const emailInput = document.querySelector("#email");
 
-  const { value: message } = document.querySelector("#message");
+  const messageInput = document.querySelector("#message");
+
+  const { value: firstName } = firstNameInput;
+
+  const { value: lastName } = lastNameInput;
+
+  const { value: email } = emailInput;
+
+  const { value: message } = messageInput;
 
   const formData = {
     firstName,
@@ -57,7 +66,9 @@ const onSubmit = (id) => {
   });
   if (!isFormValid) return;
 
-  sendContactForm(id, formData);
+  sendContactForm(id, formData, () =>
+    resetFormInputs([firstNameInput, lastNameInput, emailInput, messageInput])
+  );
   closeDialog();
 
   Notification({

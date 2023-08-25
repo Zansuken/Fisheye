@@ -78,7 +78,7 @@ export const getPhotographersAvatar = async (id) => {
   }
 };
 
-export const sendContactForm = async (id, formData) => {
+export const sendContactForm = async (id, formData, resetForm) => {
   try {
     const formattedEndpoint = endpoints.CONTACT.replace("photographerId", id);
     const response = await fetch(formattedEndpoint, {
@@ -92,5 +92,7 @@ export const sendContactForm = async (id, formData) => {
     return data;
   } catch (error) {
     console.log(error);
+  } finally {
+    resetForm();
   }
 };
