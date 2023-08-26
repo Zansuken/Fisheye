@@ -1,5 +1,12 @@
 import build from "../../../componentBuilder";
 
+/**
+ * @param {String} message - Notification message
+ * @param {String} type - Notification type
+ * @param {Boolean} hasDialog - Notification hasDialog
+ * @returns {HTMLElement} - Notification component
+ * @description - Renders Notification component
+ **/
 const Notification = ({ message, type, hasDialog }) => {
   const app = document.querySelector("#app");
 

@@ -1,7 +1,7 @@
 .price-and-likes__container {
     position: fixed;
     bottom: 0;
-    right: 0;
+    right: 36px;
     background-color: var(--color-hover);
     padding: 21px 37px;
     font-size: 24px;
@@ -12,6 +12,7 @@
     display: flex;
     gap: 64px;
     border-radius: 5px 5px 0 0;
+    z-index: 2;
 }
 
 .price-and-likes__container__likes {
@@ -22,4 +23,12 @@
 
 .price-and-likes__container__likes__icon {
     filter: grayscale(100%);
+}
+
+@media screen and (max-width: 768px) {
+    .price-and-likes__container {
+        font-size: 16px;
+        padding: 8px 16px;
+        gap: 32px;
+    }
 }

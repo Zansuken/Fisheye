@@ -5,6 +5,11 @@ import Home from "../Home";
 import Photographer from "../Photographer";
 import Header from "../shared/Header";
 
+/**
+ * @param {String} currentRoute - Current route
+ * @returns {HTMLElement} - App component
+ * @description - Renders App component
+ */
 const App = (currentRoute) => {
   const isHomePage = currentRoute === routes.HOME;
 

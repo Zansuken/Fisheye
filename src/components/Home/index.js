@@ -10,6 +10,10 @@ if (currentRoute() === routes.HOME) {
   photographers = await getPhotographers();
 }
 
+/**
+ * @returns {HTMLElement} - Home component
+ * @description - Renders Home component
+ */
 const Home = () => {
   const cards = photographers?.map((photographer) =>
     PhotographerCard(photographer)

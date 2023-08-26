@@ -1,5 +1,10 @@
 import build from "../../../../componentBuilder";
 
+/**
+ * @param {String} defaultLabel - Default label
+ * @returns {HTMLElement} - OpenSortingOptionsButton component
+ * @description - Renders OpenSortingOptionsButton component
+ **/
 const OpenSortingOptionsButton = ({ defaultLabel }) => {
   return build(
     "button",

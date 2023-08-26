@@ -1,7 +1,11 @@
-import { media, videoUrl } from "..";
+import { media } from "..";
+import { formatMediaArray } from "../../../helpers/arrayHelpers";
 import SortingOption from "./MediaSorterOptions/SortingOption";
 import { renderContent, sortMedia } from "./helpers";
 
+/**
+ * @description - Mutation observer to handle media sorting
+ **/
 export const observer = new MutationObserver(() => {
   observer.disconnect();
 
@@ -29,17 +33,7 @@ export const observer = new MutationObserver(() => {
   if (!media) return;
 
   // Variables
-  const formattedMedia = media.map((media) => {
-    const updatedMedia = media;
-
-    if (media.video) {
-      updatedMedia.type = "video";
-      updatedMedia.url = videoUrl;
-    } else {
-      updatedMedia.type = "image";
-    }
-    return updatedMedia;
-  });
+  const formattedMedia = formatMediaArray(media);
 
   let currentSort = "popularity";
 
@@ -59,6 +53,13 @@ export const observer = new MutationObserver(() => {
   const setIsOpen = (elements, value) =>
     elements.forEach((element) => element.setAttribute("data-open", value));
 
+  /**
+   * @param {HTMLElement} element
+   * @param {String} value
+   * @returns {void}
+   * @description - Sets data-selected attribute on container
+   * and updates selected label
+   **/
   const setDataSelectedAttribute = (element, value) => {
     const { label } = buttons[value];
     element.setAttribute("data-selected", value);

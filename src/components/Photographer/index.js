@@ -1,8 +1,7 @@
 import {
   getPhotographer,
   getPhotographersAvatar,
-  getPhotographersImages,
-  getPhotographersVideos,
+  getPhotographersMedia,
 } from "../../api/requests";
 import build from "../../componentBuilder";
 import {
@@ -14,27 +13,30 @@ import Banner from "./Banner";
 import MediaSorter from "./MediaSorter";
 import PriceAndLikes from "./PriceAndLikes";
 
-const currentId = getPhotographerId(currentRoute());
+export const currentId = getPhotographerId(currentRoute());
+
 const photographer =
   isPhotoGrapherRoute(currentRoute()) && (await getPhotographer(currentId));
-
-export const media =
-  isPhotoGrapherRoute(currentRoute()) &&
-  (await getPhotographersImages(currentId));
-
-export const videoUrl =
-  isPhotoGrapherRoute(currentRoute()) &&
-  (await getPhotographersVideos(currentId));
 
 const avatar =
   isPhotoGrapherRoute(currentRoute()) &&
   (await getPhotographersAvatar(currentId));
 
+export const media = await getPhotographersMedia(currentId, true);
+
+/**
+ * @returns {HTMLElement} - Photographer component
+ * @description - Renders Photographer component
+ **/
 const Photographer = () => {
+  const likes = media.map((item) => item.likes);
+  const totalLikesCount = likes.reduce((acc, curr) => acc + curr, 0);
+  const price = photographer.price;
+
   return build("div", { class: "photographer", id: "photographerContent" }, [
     Banner({ photographer, avatar }),
     MediaSorter(),
-    PriceAndLikes(),
+    PriceAndLikes({ totalLikesCount, price }),
   ]);
 };
 

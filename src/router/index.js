@@ -1,11 +1,21 @@
 import routes from "../constants/routes";
 
+/**
+ * Checks if the route is a photographer route
+ * @param {string} route The route to check
+ * @returns {boolean} True if the route is a photographer route, false otherwise
+ **/
 export const isPhotoGrapherRoute = (route) => {
   const { PHOTOGRAPHER } = routes;
 
   return route.search(PHOTOGRAPHER.slice(0, -3)) !== -1;
 };
 
+/**
+ * Formats the photographer route
+ * @param {string} route The route to format
+ * @returns {string} The formatted route
+ **/
 export const formatPhotographerRoute = (route) => {
   const { PHOTOGRAPHER } = routes;
 
@@ -17,6 +27,12 @@ export const formatPhotographerRoute = (route) => {
   return route;
 };
 
+/**
+ * Returns the photographer id
+ * @param {string} route The route to format
+ * @returns {string} The photographer id
+ * @returns {null} If the route is not a photographer route
+ **/
 export const getPhotographerId = (route) => {
   const { PHOTOGRAPHER } = routes;
 

@@ -1,5 +1,9 @@
 import build from "../../../componentBuilder";
 
+/**
+ * @returns {HTMLElement} - Logo component
+ * @description - Renders Logo component
+ **/
 const Logo = () => {
   const logo = () =>
     build("div", {

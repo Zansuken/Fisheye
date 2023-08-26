@@ -5,6 +5,11 @@ import PhotographerName from "../../shared/Name";
 import ProfilePicture from "../../shared/ProfilePicture";
 import TagLine from "../../shared/TagLine";
 
+/**
+ * @param {Object} photographer - Photographer object
+ * @returns {HTMLElement} - PhotographerCard component
+ * @description - Renders PhotographerCard component
+ **/
 const PhotographerCard = ({
   id,
   name,

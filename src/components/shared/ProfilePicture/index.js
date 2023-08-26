@@ -1,5 +1,11 @@
 import build from "../../../componentBuilder";
 
+/**
+ * @param {String} src - Profile picture source
+ * @param {String} alt - Profile picture alt
+ * @returns {HTMLElement} - ProfilePicture component
+ * @description - Renders ProfilePicture component
+ **/
 const ProfilePicture = ({ src, alt }) => {
   const image = build("img", {
     class: "photographer-card__picture",

@@ -1,5 +1,9 @@
 import build from "../../../componentBuilder";
 
+/**
+ * @returns {HTMLElement} - MediaSorterLabel component
+ * @description - Renders MediaSorterLabel component
+ **/
 const MediaSorterLabel = () => {
   return build("div", null, [
     build(

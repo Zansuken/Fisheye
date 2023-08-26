@@ -1,5 +1,16 @@
 import build from "../../../componentBuilder";
 
+/**
+ * @param {String} type - Input type
+ * @param {String} label - Input label
+ * @param {String} name - Input name
+ * @param {Function} onChange - Input onChange handler
+ * @param {String} placeholder - Input placeholder
+ * @param {Boolean} required - Input required
+ * @param {Boolean} fullWidth - Input fullWidth
+ * @returns {HTMLElement} - Input component
+ * @description - Renders Input component
+ **/
 const Input = ({
   type,
   label,

@@ -1,5 +1,7 @@
 import App from "./components/App";
+import { getLocalStorage, updateLocalStorage } from "./helpers/localstorage";
 import { currentRoute, handleRoute } from "./router";
+import { generateId } from "./session";
 
 /**
  * Handles the popstate event
@@ -18,3 +20,9 @@ handleRoute(window.location.pathname);
 const root = document.getElementById("app");
 
 root.appendChild(App(currentRoute()));
+
+export const sessionId = getLocalStorage("sessionId");
+
+if (!sessionId) {
+  updateLocalStorage("sessionId", generateId());
+}

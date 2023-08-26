@@ -4,6 +4,11 @@ import MediaCard from "./MediaCard";
 
 let focusedMedia;
 
+/**
+ * @param {Array} media - Photographer media
+ * @param {Object} focusedMedia - Focused media
+ * @description - Renders carousel
+ */
 export const renderCarousel = (media, focusedMedia) => {
   // Remove existing carousel
   const existingCarousel = document.querySelector(".carousel");
@@ -15,6 +20,11 @@ export const renderCarousel = (media, focusedMedia) => {
   document.querySelector("#app").classList.add("dialog-open");
 };
 
+/**
+ * @param {Array} media - Photographer media
+ * @returns {HTMLElement} - Content component
+ * @description - Renders Content component
+ **/
 const Content = ({ media }) => {
   const mediaComponents = [];
 

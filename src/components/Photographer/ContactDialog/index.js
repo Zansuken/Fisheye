@@ -5,11 +5,19 @@ import DialogActions from "./DialogActions";
 import DialogContent from "./DialogContent";
 import DialogTitle from "./DialogTitle";
 
+/**
+ * @description - Opens dialog
+ * @returns {void}
+ **/
 export const openDialog = () => {
   const dialog = document.querySelector(".contact-dialog");
   dialog.showModal();
 };
 
+/**
+ * @description - Closes dialog
+ * @returns {void}
+ **/
 export const closeDialog = () => {
   const dialog = document.querySelector(".contact-dialog");
   dialog.close();
@@ -18,6 +26,11 @@ export const closeDialog = () => {
 const resetFormInputs = (inputs) =>
   inputs.forEach((input) => (input.value = ""));
 
+/**
+ * @param {Number} id - Photographer id
+ * @returns {void}
+ * @description - Submits form
+ **/
 const onSubmit = (id) => {
   const firstNameInput = document.querySelector("#firstName");
 
@@ -79,6 +92,13 @@ const onSubmit = (id) => {
 
 let idToSend = null;
 
+/**
+ * @param {Object} param0
+ * @param {Number} param0.id
+ * @param {String} param0.name
+ * @returns {HTMLElement} - ContactDialog component
+ * @description - Renders ContactDialog component
+ **/
 const ContactDialog = ({ id, name }) => {
   idToSend = id;
 

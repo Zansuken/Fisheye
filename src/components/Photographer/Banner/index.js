@@ -6,6 +6,12 @@ import ProfilePicture from "../../shared/ProfilePicture";
 import TagLine from "../../shared/TagLine";
 import ContactDialog, { openDialog } from "../ContactDialog";
 
+/**
+ * @param {Object} photographer - Photographer object
+ * @param {String} avatar - Photographer avatar
+ * @returns {HTMLElement} - Banner component
+ * @description - Renders Banner component
+ **/
 const Banner = ({
   photographer: { id, name, city, country, tagline },
   avatar,

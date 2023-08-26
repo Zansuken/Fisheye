@@ -10,6 +10,10 @@ observer.observe(document.body, {
   subtree: true,
 });
 
+/**
+ * @returns {HTMLElement} - MediaSorter component
+ * @description - Renders MediaSorter component
+ **/
 const MediaSorter = () => {
   const sortingOptions = [
     { id: "dateSorting", label: "Date" },
