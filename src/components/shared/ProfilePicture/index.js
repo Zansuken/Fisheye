@@ -10,7 +10,7 @@ const ProfilePicture = ({ src, alt }) => {
   const image = build("img", {
     class: "photographer-card__picture",
     src,
-    alt,
+    alt: `${alt} photo`,
   });
   return build("div", { class: "photographer-card__picture-container" }, [
     image,

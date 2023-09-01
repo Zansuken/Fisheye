@@ -19,7 +19,7 @@ const Home = () => {
     PhotographerCard(photographer)
   );
 
-  return build("div", { class: "home" }, cards);
+  return build("main", { class: "home" }, cards);
 };
 
 export default Home;

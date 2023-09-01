@@ -22,7 +22,7 @@ const MediaCard = ({ media, media: { type, id } }) => {
         build("img", {
           class: "content__media__thumbnail",
           src,
-          alt: title,
+          alt: `${title} thumbnail`,
           "data-id": id,
         }),
       ]),
@@ -35,16 +35,11 @@ const MediaCard = ({ media, media: { type, id } }) => {
 
     return build("div", { class: "content__media", tabindex: "0", title }, [
       build("div", { class: "content__media__thumbnail-container" }, [
-        build(
-          "video",
-          {
-            class: "content__media__thumbnail",
-            src: url,
-            alt: title,
-            "data-id": id,
-          },
-          [build("source", { src: url, type: "video/mp4", "data-id": id })]
-        ),
+        build("video", {
+          class: "content__media__thumbnail",
+          src: url,
+          "data-id": id,
+        }),
       ]),
       MediaDescription({ title, likesCount: likes, usersLiked }),
     ]);

@@ -8,7 +8,7 @@ import build from "../../../componentBuilder";
  * @description - Renders Notification component
  **/
 const Notification = ({ message, type, hasDialog }) => {
-  const app = document.querySelector("#app");
+  const app = document.querySelector(".app");
 
   if (hasDialog) {
     const dialog = document.querySelector("dialog");

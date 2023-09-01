@@ -30,6 +30,7 @@ const MediaSorter = () => {
           "data-selected": "popularity",
           "aria-haspopup": "listbox",
           "aria-expanded": "false",
+          role: "listbox",
         },
         [
           OpenSortingOptionsButton({ defaultLabel: "Popularité" }),

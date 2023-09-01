@@ -9,10 +9,10 @@ import Title from "./Title";
  **/
 const Header = ({ isHomePage }) => {
   if (isHomePage) {
-    return build("div", { class: "header" }, [Logo(), Title()]);
+    return build("header", { class: "header" }, [Logo(), Title()]);
   }
 
-  return build("div", { class: "header" }, [Logo()]);
+  return build("header", { class: "header" }, [Logo()]);
 };
 
 export default Header;

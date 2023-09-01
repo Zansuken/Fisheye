@@ -33,7 +33,7 @@ const Photographer = () => {
   const totalLikesCount = likes.reduce((acc, curr) => acc + curr, 0);
   const price = photographer.price;
 
-  return build("div", { class: "photographer", id: "photographerContent" }, [
+  return build("main", { class: "photographer", id: "photographerContent" }, [
     Banner({ photographer, avatar }),
     MediaSorter(),
     PriceAndLikes({ totalLikesCount, price }),

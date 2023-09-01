@@ -7,11 +7,19 @@ import build from "../../../componentBuilder";
 const Logo = () => {
   const logo = () =>
     build("div", {
-      alt: "logo",
+      title: "logo",
       class: "logo",
     });
 
-  return build("a", { href: "/home", alt: "Fisheye Home page" }, [logo()]);
+  return build(
+    "a",
+    {
+      href: "/home",
+      title: "Page d’accueil",
+      "aria-label": "Fisheye page d'accueil",
+    },
+    [logo()]
+  );
 };
 
 export default Logo;

@@ -11,7 +11,6 @@ const OpenSortingOptionsButton = ({ defaultLabel }) => {
     {
       class: "media-sorter__container__select__openButton",
       "data-open": JSON.stringify(false),
-      role: "button",
     },
     [
       build(

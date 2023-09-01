@@ -48,6 +48,10 @@ const build = (elementType, attributes, ...children) => {
         element.addEventListener("click", value);
         return;
       }
+      if (key === "required") {
+        element.required = value;
+        return;
+      }
       element.setAttribute(key, value);
     });
   }

@@ -28,11 +28,11 @@ const PhotographerCard = ({
           ":id",
           id
         )}`,
-        alt: "",
       },
       [
         ProfilePicture({
           src: avatarUrl,
+          alt: `Page du photographe ${name}`,
         }),
         PhotographerName({ name }),
       ]
@@ -48,7 +48,10 @@ const PhotographerCard = ({
       formattedPrice(),
     ]);
 
-  return build("div", { class: "photographer-card" }, [link(), description()]);
+  return build("article", { class: "photographer-card" }, [
+    link(),
+    description(),
+  ]);
 };
 
 export default PhotographerCard;

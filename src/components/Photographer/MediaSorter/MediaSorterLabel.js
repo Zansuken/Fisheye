@@ -7,11 +7,11 @@ import build from "../../../componentBuilder";
 const MediaSorterLabel = () => {
   return build("div", null, [
     build(
-      "label",
+      "span",
       {
         class: "media-sorter__container__title__text",
         id: "sortByLabel",
-        title: "Trier par",
+        "aria-label": "media sorter",
       },
       ["Trier par"]
     ),

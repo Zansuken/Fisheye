@@ -21,6 +21,7 @@ const SortingListOptions = ({ sortingOptions }) => {
       role: "listbox",
       "aria-labelledby": "sortByLabel",
       "aria-activedescendant": "popularitySorting",
+      "aria-owns": "dateSorting",
     },
     optionsComponents
   );

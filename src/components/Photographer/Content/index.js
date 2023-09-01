@@ -17,7 +17,7 @@ export const renderCarousel = (media, focusedMedia) => {
   }
 
   document.body.appendChild(Carousel({ media, focusedMedia }));
-  document.querySelector("#app").classList.add("dialog-open");
+  document.querySelector(".app").classList.add("dialog-open");
 };
 
 /**
@@ -50,7 +50,7 @@ const Content = ({ media }) => {
   media.forEach((mediaItem) =>
     mediaComponents.push(
       build(
-        "a",
+        "article",
         {
           class: "content__media__container",
           onClick: (event) => onMediaClick(event),

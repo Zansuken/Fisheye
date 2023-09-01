@@ -36,6 +36,10 @@ const Input = ({
     baseInputAttributes.onchange = onChange;
   }
 
+  if (type === "textarea") {
+    delete baseInputAttributes.type;
+  }
+
   const textareaInputAttributes = {
     ...baseInputAttributes,
     class: addFullWidthClass("input-textarea"),

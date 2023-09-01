@@ -137,7 +137,7 @@ const Carousel = ({ media, focusedMedia }) => {
 
   const closeCarousel = () => {
     document.querySelector(".carousel").remove();
-    document.querySelector("#app").classList.remove("dialog-open");
+    document.querySelector(".app").classList.remove("dialog-open");
   };
 
   const updateFocusedMedia = (direction) => {
@@ -234,6 +234,7 @@ const Carousel = ({ media, focusedMedia }) => {
       "data-focused": dataFocused,
       class: className,
       "data-id": media.id,
+      alt: media.title,
     });
   });
 
@@ -252,7 +253,7 @@ const Carousel = ({ media, focusedMedia }) => {
               onClick: closeCarousel,
               "aria-label": "Close dialog",
             },
-            [build("img", { src: "/images/cross.svg" })]
+            [build("img", { src: "/images/cross.svg", alt: "close icon" })]
           ),
           build(
             "button",
@@ -261,7 +262,12 @@ const Carousel = ({ media, focusedMedia }) => {
               "aria-label": "Previous image",
               onClick: () => updateFocusedMedia("previous"),
             },
-            [build("img", { src: "/images/arrow_color-primary.svg" })]
+            [
+              build("img", {
+                src: "/images/arrow_color-primary.svg",
+                alt: "previous icon",
+              }),
+            ]
           ),
           build("div", { class: "carousel__container__media" }, mediaElements),
           build(
@@ -271,7 +277,12 @@ const Carousel = ({ media, focusedMedia }) => {
               "aria-label": "Next image",
               onClick: () => updateFocusedMedia("next"),
             },
-            [build("img", { src: "/images/arrow_color-primary.svg" })]
+            [
+              build("img", {
+                src: "/images/arrow_color-primary.svg",
+                alt: "next icon",
+              }),
+            ]
           ),
         ]),
         build("div", { class: "carousel__container__media__description" }, [

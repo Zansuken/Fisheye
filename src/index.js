@@ -17,9 +17,9 @@ window.addEventListener("popstate", () => {
  **/
 handleRoute(window.location.pathname);
 
-const root = document.getElementById("app");
+const root = document.body;
 
-root.appendChild(App(currentRoute()));
+root.insertBefore(App(currentRoute()), root.firstChild);
 
 export const sessionId = getLocalStorage("sessionId");
 

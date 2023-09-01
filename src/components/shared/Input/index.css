@@ -72,7 +72,7 @@
         margin-top: 0;
     }
 
-    #app > div > div.photographer > div.banner > div.banner__right-section > dialog > div > form > div.contact-dialog__actions > button {
+    #photographerContent > div.banner > div.banner__right-section > dialog > div > div.contact-dialog__form > div.contact-dialog__actions > button {
         width: 100%;
         flex: 1;
     }

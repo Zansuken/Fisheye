@@ -14,6 +14,7 @@ const SortingOption = ({ id, label, isDisplayed = true }) => {
       class: "media-sorter__container__select__option button",
       id,
       "data-isDisplayed": JSON.stringify(isDisplayed),
+      role: "option",
     },
     [
       build(
