@@ -23,7 +23,7 @@ const OpenSortingOptionsButton = ({ defaultLabel }) => {
         {
           class: "media-sorter__container__select__button__icon",
           src: "/images/arrow.svg",
-          alt: "Arrow icon",
+          alt: "Icône de flèche",
           "data-open": JSON.stringify(false),
         },
         []

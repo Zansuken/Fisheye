@@ -103,6 +103,20 @@ const updateMediaLikedStyle = (checkedLikes) => {
 };
 
 /**
+ * @returns {void}
+ * @description - Disable the like button for 2 seconds to avoid spamming the backend
+ */
+const disableLikeButton = () => {
+  const button = document.querySelector("#likeButton");
+
+  button.disabled = true;
+
+  setTimeout(() => {
+    button.disabled = false;
+  }, 2000);
+};
+
+/**
  * @param {Array} media - Photographer media
  * @param {Object} focusedMedia - Focused media
  * @description - Renders carousel
@@ -194,6 +208,7 @@ const Carousel = ({ media, focusedMedia }) => {
    **/
   const onLike = async (videoUrl) => {
     try {
+      disableLikeButton();
       const { media } = await updateMediaLikes(focusedMediaId, sessionId);
 
       renderFocusedMediaLikes(media.likes, media.usersLiked);
@@ -294,6 +309,7 @@ const Carousel = ({ media, focusedMedia }) => {
           build(
             "button",
             {
+              id: "likeButton",
               class: classNames([
                 {
                   name: "carousel__container__media__description__likes",
@@ -317,7 +333,7 @@ const Carousel = ({ media, focusedMedia }) => {
               build("img", {
                 class: "content__media__description__likes__icon",
                 src: "/images/heart.svg",
-                alt: "heart icon",
+                alt: "J'aime",
               }),
             ]
           ),

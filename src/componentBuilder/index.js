@@ -44,15 +44,23 @@ const build = (elementType, attributes, ...children) => {
 
   if (attributes) {
     Object.entries(attributes).forEach(([key, value]) => {
-      if (key === "onClick") {
-        element.addEventListener("click", value);
-        return;
+      switch (key) {
+        case "onClick":
+          element.addEventListener("click", value);
+          break;
+
+        case "required":
+          element.required = value;
+          break;
+
+        case "disabled":
+          element.disabled = value;
+          break;
+
+        default:
+          element.setAttribute(key, value);
+          break;
       }
-      if (key === "required") {
-        element.required = value;
-        return;
-      }
-      element.setAttribute(key, value);
     });
   }
 

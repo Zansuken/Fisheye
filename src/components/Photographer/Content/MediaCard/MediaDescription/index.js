@@ -33,7 +33,7 @@ const MediaDescription = ({ title, likesCount, usersLiked }) => {
         build("img", {
           class: "content__media__description__likes__icon",
           src: "/images/heart.svg",
-          alt: "heart icon",
+          alt: "J'aime",
         }),
       ]
     ),

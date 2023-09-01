@@ -47,7 +47,7 @@ const Content = ({ media }) => {
     });
   };
 
-  media.forEach((mediaItem) =>
+  media?.forEach((mediaItem) =>
     mediaComponents.push(
       build(
         "article",

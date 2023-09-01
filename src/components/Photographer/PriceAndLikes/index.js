@@ -27,7 +27,7 @@ const PriceAndLikes = ({ totalLikesCount, price }) => {
       build("img", {
         class: "price-and-likes__container__likes__icon",
         src: "/images/heart_black.svg",
-        alt: "heart icon",
+        alt: "J'aime",
       }),
     ]),
     build("div", { class: "price-and-likes__container__price" }, [

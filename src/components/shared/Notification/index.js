@@ -14,7 +14,11 @@ const Notification = ({ message, type, hasDialog }) => {
     const dialog = document.querySelector("dialog");
 
     dialog.appendChild(
-      build("div", { class: `notification ${type}` }, message)
+      build(
+        "div",
+        { class: `notification ${type}`, "aria-live": "polite" },
+        message
+      )
     );
 
     setTimeout(() => {
@@ -24,7 +28,13 @@ const Notification = ({ message, type, hasDialog }) => {
     return;
   }
 
-  app.appendChild(build("div", { class: `notification ${type}` }, message));
+  app.appendChild(
+    build(
+      "div",
+      { class: `notification ${type}`, "aria-live": "polite" },
+      message
+    )
+  );
 
   setTimeout(() => {
     document.querySelector(".notification").remove();

@@ -5,7 +5,7 @@
  * @description - Takes an array of media objects and a video url and returns an array of media objects with updated type and url
  **/
 export const formatMediaArray = (mediaToSort, videoUrl) =>
-  mediaToSort.map((media) => {
+  mediaToSort?.map((media) => {
     const updatedMedia = media;
 
     if (media.video) {
