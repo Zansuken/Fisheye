@@ -15,6 +15,11 @@
     gap: 20px;
 }
 
+.photographer-card__link:focus .photographer-card__picture-container > img,
+.photographer-card__link:hover .photographer-card__picture-container > img {
+	transform: scale(0.71);
+}
+
 .photographer-card__price {
     font-size: 11px;
     font-weight: 400;

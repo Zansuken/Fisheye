@@ -2,5 +2,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 26px 35px 35px 35px;
+    margin-left: 35px;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    width: calc(100% - 70px);
+}
+
+@media screen and (max-height: 862px) {
+    .contact-dialog__actions > button {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+        line-height: 18px;
+    }
 }

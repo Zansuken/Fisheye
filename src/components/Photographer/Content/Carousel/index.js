@@ -256,8 +256,8 @@ const Carousel = ({ media, focusedMedia }) => {
   const currentVideoUrl = media.find((media) => media.video).url;
 
   return build(
-    "div",
-    { class: "carousel", "aria-label": "image closeup view" },
+    "dialog",
+    { class: "carousel", "aria-label": "image closeup view", open: "true" },
     [
       build("div", { class: "carousel__container" }, [
         build("div", { class: "carousel__container__media-container" }, [
@@ -273,6 +273,7 @@ const Carousel = ({ media, focusedMedia }) => {
           build(
             "button",
             {
+              id: "carouselPreviousButton",
               class: "carousel__container__button previous",
               "aria-label": "Previous image",
               onClick: () => updateFocusedMedia("previous"),
@@ -288,6 +289,7 @@ const Carousel = ({ media, focusedMedia }) => {
           build(
             "button",
             {
+              id: "carouselNextButton",
               class: "carousel__container__button next",
               "aria-label": "Next image",
               onClick: () => updateFocusedMedia("next"),

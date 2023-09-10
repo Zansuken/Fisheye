@@ -27,6 +27,15 @@ const recursiveAppend = (element, children) => {
  * @param {GlobalAttributes} attributes - An object of attributes
  * @param  {HTMLElement | string} [children] - An array of nodes or strings
  * @returns {HTMLElement} - A new HTML element
+ *
+ * @example
+ * ```
+ * build("div", { class: "container" },
+ *  [ build("input", { class: "textField", type: "text" }),
+ *    build("button", { class: "submitButton", onClick: () => submit() },
+ *      ["SUBMIT"])
+ *  ])
+ * ```
  */
 const build = (elementType, attributes, ...children) => {
   const element = document.createElement(elementType);
@@ -47,6 +56,14 @@ const build = (elementType, attributes, ...children) => {
       switch (key) {
         case "onClick":
           element.addEventListener("click", value);
+          break;
+
+        case "onKeyDown":
+          element.addEventListener("keydown", value);
+          break;
+
+        case "open":
+          element.open = value;
           break;
 
         case "required":

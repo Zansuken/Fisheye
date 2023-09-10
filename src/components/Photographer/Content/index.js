@@ -28,9 +28,9 @@ export const renderCarousel = (media, focusedMedia) => {
 const Content = ({ media }) => {
   const mediaComponents = [];
 
-  const onMediaClick = (event) => {
+  const onMediaClick = ({ target }) => {
     renderCarousel(media, focusedMedia);
-    const targetId = event.target.getAttribute("data-id");
+    const targetId = target.getAttribute("data-id");
     const items = document.querySelectorAll(
       ".carousel__container__media__element"
     );
@@ -47,6 +47,12 @@ const Content = ({ media }) => {
     });
   };
 
+  const onPressEnter = (event) => {
+    if (event.key === "Enter") {
+      onMediaClick(event);
+    }
+  };
+
   media?.forEach((mediaItem) =>
     mediaComponents.push(
       build(
@@ -54,6 +60,7 @@ const Content = ({ media }) => {
         {
           class: "content__media__container",
           onClick: (event) => onMediaClick(event),
+          onKeyDown: (event) => onPressEnter(event),
         },
         [MediaCard({ media: mediaItem })]
       )

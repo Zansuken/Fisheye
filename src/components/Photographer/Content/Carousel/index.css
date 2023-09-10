@@ -20,14 +20,14 @@
 }
 
 .carousel__container__media {
-    padding-top: 64px;
+    margin-top: 64px;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 1050px;
-    height: 800px;
+    height: calc(100% - 64px);
     overflow: hidden;
 }
 
@@ -48,7 +48,7 @@
     object-fit: cover;
     position: absolute;
     opacity: 0;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 @keyframes fadeIn {
@@ -227,19 +227,46 @@
     .carousel__container__button {
         position: absolute;
         z-index: 999;
+        width: 50%;
+    }
+
+    .carousel__container__button:hover {
+        cursor: unset;
+        filter: unset;
+        background-color: unset;
+    }
+
+    .carousel__container__button:hover img {
+        filter: unset;
+    }
+
+    .carousel__container__button > img {
+        height: 20px;
     }
 
     .carousel__container__button.previous {
         left: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .carousel__container__button.next {
         right: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .carousel__container__close {
         z-index: 999;
         margin-right: 8px;
+        margin-top: 8px;
+        top: 64px;
+    }
+
+    .carousel__container__close > img {
+        height: 24px;
     }
 
     .carousel__container__media__description {

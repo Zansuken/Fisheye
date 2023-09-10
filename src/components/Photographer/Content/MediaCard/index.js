@@ -17,32 +17,40 @@ const MediaCard = ({ media, media: { type, id } }) => {
       usersLiked,
     } = media || { usersLiked: [] };
 
-    return build("div", { class: "content__media", tabindex: "0", title }, [
-      build("div", { class: "content__media__thumbnail-container" }, [
-        build("img", {
-          class: "content__media__thumbnail",
-          src,
-          alt: `${title} thumbnail`,
-          "data-id": id,
-        }),
-      ]),
-      MediaDescription({ title, likesCount: likes, usersLiked }),
-    ]);
+    return build(
+      "div",
+      { class: "content__media", tabindex: "0", "data-id": id, title },
+      [
+        build("div", { class: "content__media__thumbnail-container" }, [
+          build("img", {
+            class: "content__media__thumbnail",
+            src,
+            alt: `${title} thumbnail`,
+            "data-id": id,
+          }),
+        ]),
+        MediaDescription({ title, likesCount: likes, usersLiked }),
+      ]
+    );
   }
 
   if (type === "video") {
     const { title, likes, url, usersLiked } = media || { usersLiked: [] };
 
-    return build("div", { class: "content__media", tabindex: "0", title }, [
-      build("div", { class: "content__media__thumbnail-container" }, [
-        build("video", {
-          class: "content__media__thumbnail",
-          src: url,
-          "data-id": id,
-        }),
-      ]),
-      MediaDescription({ title, likesCount: likes, usersLiked }),
-    ]);
+    return build(
+      "div",
+      { class: "content__media", tabindex: "0", "data-id": id, title },
+      [
+        build("div", { class: "content__media__thumbnail-container" }, [
+          build("video", {
+            class: "content__media__thumbnail",
+            src: url,
+            "data-id": id,
+          }),
+        ]),
+        MediaDescription({ title, likesCount: likes, usersLiked }),
+      ]
+    );
   }
 };
 

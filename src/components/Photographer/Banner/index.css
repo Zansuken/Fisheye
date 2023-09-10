@@ -51,6 +51,10 @@
     margin-right: 50px;
 }
 
+#photographerContent > div.banner > div.banner__right-section > div > img:hover {
+	transform: unset;
+}
+
 @media screen and (max-width: 1080px) {
     .banner__description .photographer-card__name {
         font-size: 48px;

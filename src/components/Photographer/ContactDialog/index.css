@@ -5,18 +5,20 @@
 .contact-dialog {
     width: 100%;
     max-width: 669px;
-    height: 90vh;
     background-color: var(--color-secondary);
     padding: 0;
     border: none;
     border-radius: 5px;
     overflow-x: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 768px) {
     .contact-dialog {
         width: 100vw;
-        height: 100vh;
     }
     .contact-dialog__form {
         max-height: 693px !important;
@@ -26,15 +28,9 @@
 @media screen and (max-width: 480px) {
     .contact-dialog {
         width: 100vw;
-        height: 100vh;
         padding: 0;
         min-width: unset;
     }
-}
-
-.contact-dialog__form {
-    flex: 1;
-    max-height: 562px;
 }
 
 .contact-dialog__root {

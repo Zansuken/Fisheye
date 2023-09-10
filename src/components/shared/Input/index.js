@@ -1,6 +1,21 @@
 import build from "../../../componentBuilder";
 
 /**
+ * ## Renders Input component
+ * ### Example:
+ * ```
+    * Input({
+          label: "First name",
+          name: "firstName",
+          type: "text",
+          placeholder: "First name",
+          required: true,
+          fullWidth: true,
+        })
+
+    * <input id="firstName" type="text" class="input fullWidth" name="firstName" placeholder="First name" required="">
+ * ```
+ * ### Props:
  * @param {String} type - Input type
  * @param {String} label - Input label
  * @param {String} name - Input name
@@ -8,8 +23,7 @@ import build from "../../../componentBuilder";
  * @param {String} placeholder - Input placeholder
  * @param {Boolean} required - Input required
  * @param {Boolean} fullWidth - Input fullWidth
- * @returns {HTMLElement} - Input component
- * @description - Renders Input component
+ * @returns {HTMLElement} Input component
  **/
 const Input = ({
   type,
