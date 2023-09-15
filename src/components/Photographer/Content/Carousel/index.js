@@ -201,6 +201,23 @@ const Carousel = ({ media, focusedMedia }) => {
     }
   };
 
+  const onPressArrow = (event) => {
+    if (
+      Array.from(document.querySelector(".app").classList).some(
+        (className) => className === "dialog-open"
+      )
+    ) {
+      if (event.key === "ArrowLeft") {
+        updateFocusedMedia("previous");
+      }
+      if (event.key === "ArrowRight") {
+        updateFocusedMedia("next");
+      }
+    }
+  };
+
+  document.addEventListener("keydown", onPressArrow);
+
   /**
    * @param {String} videoUrl - Video url
    * @returns {void}
